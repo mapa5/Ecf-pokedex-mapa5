@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Flexo-Thin';
+    src: url("../fonts/285B7A_0_0.eot");
+    src: url("../fonts/285B7A_0_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_0_0.woff") format("woff"),url("../fonts/285B7A_0_0.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'Flexo-Regular';
+    src: url("../fonts/285B7A_1_0.eot");
+    src: url("../fonts/285B7A_1_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_1_0.woff") format("woff"),url("../fonts/285B7A_1_0.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'Flexo-Medium';
+    src: url("../fonts/285B7A_2_0.eot");
+    src: url("../fonts/285B7A_2_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_2_0.woff") format("woff"),url("../fonts/285B7A_2_0.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'Flexo-Light';
+    src: url("../fonts/285B7A_3_0.eot");
+    src: url("../fonts/285B7A_3_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_3_0.woff") format("woff"),url("../fonts/285B7A_3_0.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'Flexo-Demi';
+    src: url("../fonts/285B7A_4_0.eot");
+    src: url("../fonts/285B7A_4_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_4_0.woff") format("woff"),url("../fonts/285B7A_4_0.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'Flexo-Bold';
+    src: url("../fonts/285B7A_5_0.eot");
+    src: url("../fonts/285B7A_5_0.eot?#iefix") format("embedded-opentype"),url("../fonts/285B7A_5_0.woff") format("woff"),url("../fonts/285B7A_5_0.ttf") format("truetype")
+}
