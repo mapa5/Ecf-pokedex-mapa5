@@ -1,0 +1,18 @@
+:root {
+    /* Couleurs*/
+    --vert: #0F7C25;
+    --vert-clair: #A1ECAD;
+    --gris: #F2F2F2;
+
+    /*Typographie*/
+    --font-family: "Raleway", serif;
+    --font-optical-sizing: auto;
+    --font-weight: 400;
+    --font-style: normal;
+    --font-size-base: 16px;
+
+    /*Espacements*/
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+}
