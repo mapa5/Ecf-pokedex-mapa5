@@ -26,37 +26,141 @@ var call_poke_gen = async function CPG(i) {
 
     switch (i) {
         case "1":
-            let nbr = 151;
-            for (var n = 1; n <= 151; n++) {
-
-                try {
-                    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
-                    const data = await response.json();
-                    console.log(data);
-                    return data;
-                } catch (err) {
-                    console.error(err);
+            {
+                let nbr = 151;
+                for (var n1 = 1; n1 <= 151; n1++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n1}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
                 }
+                return nbr;
             }
-            return nbr;
         case "2":
-
+            {
+                let nbr = 99;
+                for (var n2 = 152; n2 <= 251; n2++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n2}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "3":
-
+            {
+                let nbr = 134;
+                for (var n3 = 252; n3 <= 386; n3++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n3}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "4":
-
+            {
+                let nbr = 106;
+                for (var n4 = 387; n4 <= 493; n4++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n4}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "5":
-
+            {
+                let nbr = 155;
+                for (var n5 = 494; n5 <= 649; n5++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n5}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "6":
-
+            {
+                let nbr = 71;
+                for (var n6 = 650; n6 <= 721; n6++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n6}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "7":
-
+            {
+                let nbr = 87;
+                for (var n7 = 722; n7 <= 809; n7++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n7}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "8":
-
+            {
+                let nbr = 95;
+                for (var n8 = 810; n8 <= 905; n8++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n8}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
         case "9":
-
+            {
+                let nbr = 119;
+                for (var n9 = 906; n9 <= 1025; n9++) {
+                    try {
+                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n9}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return nbr;
+            }
     }
-
 }
 
 var call_poke_single = async function CPS(id) {
