@@ -106,16 +106,6 @@ const create_vignette = async function CV(emplacement, id) {
 //FAIRE DES INNER HTML AU LIEU DES APPENDCHHILD
 
 const fill_vignette = function FV(data1, data2, id) {
-    // let emp = document.querySelector(``)
-
-    if (!data1) {
-        console.error("Les données ne sont pas encore chargées !");
-        return;
-    }
-    if (!data2) {
-        console.error("Les données ne sont pas encore chargées !");
-        return;
-    }
     console.log(data1);
     console.log(data2);
     console.log(id);
@@ -123,17 +113,16 @@ const fill_vignette = function FV(data1, data2, id) {
     let emp_name = document.querySelector(`.vignette_nom_${id}`)
     let emp_id = document.querySelector(`.vignette_id_${id}`)
     let emp_type_pic = document.querySelector(`.vignette_type_img1_${id}`)
-    let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`)
-    console.log(emp_pic);
-    console.log(data1);
-    console.log(data2);
-
-    console.log('pre remplissage');
-    emp_pic.src = `sprites-master/sprites/pokemon/other/dream-world/${data2.id}.png`
-    emp_name.innerHTML = data1.names[5].name
-    emp_id.innerHTML = data2.id
-    emp_type_pic.src = type_selector(data2.types[1].type.name)
-    emp_type_pic2.src = type_selector(data2.types[2].type.name)
+    let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`);
+    emp_pic.src = `sprites-master/sprites/pokemon/other/dream-world/${data2.id}.svg`
+    emp_name.innerHTML = data1.names[4].name
+    emp_id.innerHTML = `Id : ${data2.id}`
+    emp_type_pic.src = type_selector(data2.types[0].type.name)
+    try {
+        emp_type_pic2.src = type_selector(data2.types[1].type.name)
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 const empty_elem = async function EE(selector) {
@@ -141,7 +130,7 @@ const empty_elem = async function EE(selector) {
     emp.innerHTML = ""
 }
 
-const type_selector = async function TS(name) {
+const type_selector = function TS(name) {
     switch (name) {
         case "normal":
             {

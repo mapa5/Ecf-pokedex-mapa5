@@ -39,6 +39,7 @@ header img {
 
 body {
     background-color: var(--vert-clair);
+    font-family: Flexo-Medium;
 }
 
 main {
@@ -46,13 +47,61 @@ main {
     flex-direction: column;
 }
 
-.selecteur form{
-	display: flex;
-	gap: 15px;
+.selecteur form {
+    display: flex;
+    gap: 15px;
 }
-.selecteur{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
+
+.selecteur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.vignette {
+    display: grid;
+    grid-template-areas:
+        "img img nom"
+        "img img id"
+        "img img type";
+    gap: 15px;
+    border: 2px solid var(--vert);
+    border-radius: 10px;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.vignette_image {
+    grid-area: img;
+    max-width: 135px;
+    max-height: 135px;
+    margin: 5px 10px;
+
+
+}
+
+.vignette_nom {
+    grid-area: nom;
+}
+
+.vignette_id {
+    grid-area: id;
+}
+
+.vignette_type {
+    grid-area: type;
+    display: flex;
+    flex-direction: column;
+}
+
+.vignette_type img {
+    max-width: 110px;
 }
