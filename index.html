@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pokedex</title>
-	<link rel="stylesheet" type="text/css" href="css\var.css">
-	<link rel="stylesheet" href="css\style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="css\var.css">
+    <link rel="stylesheet" href="css\style.css">
+    <script type="text/javascript" src="script\function.js" defer></script>
+    <script type="text/javascript" src="script\main.js" defer=""></script>
 </head>
+
 <body>
-	<header>
-		<img src="img\pokedexlogo.png">
-		<form>
-			<input type="text" name="Recherche par nom/id" placeholder="Recherchez le pokemon de votre choix par son nom ou son id">
-			<input type="submit" name="search">
-		</form>
-		<a href="" title="">Creez votre team ici</a>
-	</header>
-	<main class="container">
-		<div>
-			<form>
-				test
-			</form>
-		</div>
-	</main>
+    <header>
+        <img src="img\pokedexlogo.png">
+        <form>
+            <input type="text" name="Recherche par nom/id" placeholder="Recherchez le pokemon de votre choix par son nom ou son id">
+            <input type="submit" name="search">
+        </form>
+        <a href="" title="">Creez votre team ici</a>
+    </header>
+    <main class="container">
+        <div class="selecteur">
+            <form class="submit_type">
+                <label for="type">Triez selon un type particulier</label>
+                <select name="type" class="type">
+                    <option value="9">Acier</option>
+                    <option value="2">Combat</option>
+                    <option value="16">Dragon</option>
+                    <option value="11">Eau</option>
+                    <option value="13">Electrique</option>
+                    <option value="18">Fée</option>
+                    <option value="10">Feu</option>
+                    <option value="15">Glace</option>
+                    <option value="7">Insecte</option>
+                    <option value="1">Normal</option>
+                    <option value="12">Plante</option>
+                    <option value="4">Poison</option>
+                    <option value="14">Psy</option>
+                    <option value="6">Roche</option>
+                    <option value="5">Sol</option>
+                    <option value="8">Spectre</option>
+                    <option value="17">Tenebres</option>
+                    <option value="3">Vol</option>
+                </select>
+                <input type="submit" name="">
+            </form>
+            <form class="submit_reg">
+                <label for="region">Triez selon la region voulue</label>
+                <select name="region" class="region">
+                    <option value="kanto">Kanto</option>
+                    <option value="johto">Johto</option>
+                    <option value="hoenn">Hoenn</option>
+                    <option value="sinnoh">Sinnoh</option>
+                    <option value="unova">Unova</option>
+                    <option value="kalos">Kalos</option>
+                    <option value="alola">Alola</option>
+                    <option value="galar">Galar</option>
+                    <option value="hisui">Hisui</option>
+                    <option value="paldea">Paldea</option>
+                    <option value="kitakami">Kitakami</option>
+                </select>
+                <input type="submit" name="">
+            </form>
+            <form class="submit_gen">
+                <label for="generation">Selectionnez la generation que vous voulez</label>
+                <select name="generation" class="generation">
+                    <option value="1">Ⅰ</option>
+                    <option value="2">Ⅱ</option>
+                    <option value="3">Ⅲ</option>
+                    <option value="4">Ⅳ</option>
+                    <option value="5">Ⅴ</option>
+                    <option value="6">Ⅵ</option>
+                    <option value="7">Ⅶ</option>
+                    <option value="8">Ⅷ</option>
+                    <option value="9">Ⅸ</option>
+                </select>
+                <input type="submit" name="">
+            </form>
+        </div>
+    </main>
 </body>
+
 </html>

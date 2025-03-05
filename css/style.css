@@ -1,17 +1,21 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
-img, picture, video, canvas {
-  max-width: 100%;
-  height: auto;
+img,
+picture,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -29,6 +33,26 @@ header {
     position: sticky;
 }
 
-header img{
-	max-width: 230px;
+header img {
+    max-width: 230px;
+}
+
+body {
+    background-color: var(--vert-clair);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.selecteur form{
+	display: flex;
+	gap: 15px;
+}
+.selecteur{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
