@@ -34,9 +34,9 @@ const call_poke_gen = async function CPG(i) {
     }
 }
 
-const call_poke_single = async function CPS(id) {
+// const call_poke_single = async function CPS(id) {
 
-}
+// }
 
 const call_poke_type = async function CPT(i) {
 
@@ -63,9 +63,9 @@ const get_poke_info = async function GPI(id) {
     }
 }
 
-const requete_pokemon_vig = async function RPV() {
+// const requete_pokemon_vig = async function RPV() {
 
-}
+// }
 
 const create_vignette = async function CV(emplacement, id) {
 
@@ -114,7 +114,7 @@ const fill_vignette = function FV(data1, data2, id) {
     let emp_id = document.querySelector(`.vignette_id_${id}`)
     let emp_type_pic = document.querySelector(`.vignette_type_img1_${id}`)
     let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`);
-    emp_pic.src = `sprites-master/sprites/pokemon/other/dream-world/${data2.id}.svg`
+    emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
     emp_name.innerHTML = data1.names[4].name
     emp_id.innerHTML = `Id : ${data2.id}`
     emp_type_pic.src = type_selector(data2.types[0].type.name)
