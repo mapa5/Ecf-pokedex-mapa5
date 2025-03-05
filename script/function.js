@@ -22,152 +22,23 @@ var recup_data = async function recup_data(i) {
 //gen 8 : 810-905
 //gen 9 : 906-1025
 
-var call_poke_gen = async function CPG(i) {
+const call_poke_gen = async function CPG(i) {
 
-    switch (i) {
-        case "1":
-            {
-                let nbr = 151;
-                for (var n1 = 1; n1 <= 151; n1++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n1}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "2":
-            {
-                let nbr = 99;
-                for (var n2 = 152; n2 <= 251; n2++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n2}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "3":
-            {
-                let nbr = 134;
-                for (var n3 = 252; n3 <= 386; n3++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n3}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "4":
-            {
-                let nbr = 106;
-                for (var n4 = 387; n4 <= 493; n4++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n4}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "5":
-            {
-                let nbr = 155;
-                for (var n5 = 494; n5 <= 649; n5++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n5}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "6":
-            {
-                let nbr = 71;
-                for (var n6 = 650; n6 <= 721; n6++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n6}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "7":
-            {
-                let nbr = 87;
-                for (var n7 = 722; n7 <= 809; n7++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n7}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "8":
-            {
-                let nbr = 95;
-                for (var n8 = 810; n8 <= 905; n8++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n8}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
-        case "9":
-            {
-                let nbr = 119;
-                for (var n9 = 906; n9 <= 1025; n9++) {
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${n9}`);
-                        const data = await response.json();
-                        console.log(data);
-                        return data;
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }
-                return nbr;
-            }
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
     }
 }
 
-var call_poke_single = async function CPS(id) {
+const call_poke_single = async function CPS(id) {
 
 }
 
-var call_poke_type = async function CPT(i) {
+const call_poke_type = async function CPT(i) {
 
     console.log(i);
     try {
@@ -180,29 +51,42 @@ var call_poke_type = async function CPT(i) {
     }
 }
 
-var get_basic_info = async function GBI(id) {
+const get_poke_info = async function GPI(id) {
+    console.log(id);
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const requete_pokemon_vig = async function RPV() {
 
 }
 
-var requete_pokemon_vig = async function RPV() {
-
-}
-
-var create_vignette = async function CV(emplacement, id) {
+const create_vignette = async function CV(emplacement, id) {
 
     let emp = document.querySelector(`${emplacement}`)
 
     let vig = document.createElement("div")
     let vig_img = document.createElement("img")
-    let vig_name = document.createElement("span")
+    let vig_name = document.createElement("h2")
     let vig_id = document.createElement("span")
 
     let vig_type = document.createElement("div")
     let type_vig_img = document.createElement("img")
-    let type_vig_name = document.createElement("span")
+    let type_vig_img2 = document.createElement("img")
 
-    vig.className = `vignette_${id}`
-    vig_type.className = `vig_type_${id}`
+    vig.className = `vignette vignette_${id}`
+    vig_img.className = `vignette_image vignette_image_${id}`
+    vig_name.className = `vignette_nom vignette_nom_${id}`
+    vig_id.className = `vignette_id vignette_id_${id}`
+    vig_type.className = `vignette_type vignette_type_${id}`
+    type_vig_img.className = `vignette_type_img1 vignette_type_img1_${id}`
+    type_vig_img2.className = `vignette_type_img2 vignette_type_img2_${id}`
 
     emp.appendChild(vig)
 
@@ -213,18 +97,132 @@ var create_vignette = async function CV(emplacement, id) {
     sel_vig.appendChild(vig_id)
     sel_vig.appendChild(vig_type)
 
-    let sel_type_vig = document.querySelector(`.vig_type_${id}`)
+    let sel_type_vig = document.querySelector(`.vignette_type_${id}`)
 
     sel_type_vig.appendChild(type_vig_img)
-    sel_type_vig.appendChild(type_vig_name)
+    sel_type_vig.appendChild(type_vig_img2)
 }
 
 //FAIRE DES INNER HTML AU LIEU DES APPENDCHHILD
 
+const fill_vignette = function FV(data1, data2, id) {
+    // let emp = document.querySelector(``)
+
+    if (!data1) {
+        console.error("Les données ne sont pas encore chargées !");
+        return;
+    }
+    if (!data2) {
+        console.error("Les données ne sont pas encore chargées !");
+        return;
+    }
+    console.log(data1);
+    console.log(data2);
+    console.log(id);
+    let emp_pic = document.querySelector(`.vignette_image_${id}`)
+    let emp_name = document.querySelector(`.vignette_nom_${id}`)
+    let emp_id = document.querySelector(`.vignette_id_${id}`)
+    let emp_type_pic = document.querySelector(`.vignette_type_img1_${id}`)
+    let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`)
+    console.log(emp_pic);
+    console.log(data1);
+    console.log(data2);
+
+    console.log('pre remplissage');
+    emp_pic.src = `sprites-master/sprites/pokemon/other/dream-world/${data2.id}.png`
+    emp_name.innerHTML = data1.names[5].name
+    emp_id.innerHTML = data2.id
+    emp_type_pic.src = type_selector(data2.types[1].type.name)
+    emp_type_pic2.src = type_selector(data2.types[2].type.name)
+}
+
+const empty_elem = async function EE(selector) {
+    let emp = document.querySelector(`${selector}`)
+    emp.innerHTML = ""
+}
+
+const type_selector = async function TS(name) {
+    switch (name) {
+        case "normal":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/1.png"
+            }
+        case "fighting":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/2.png"
+            }
+        case "flying":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/3.png"
+            }
+        case "poison":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/4.png"
+            }
+        case "ground":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/5.png"
+            }
+        case "rock":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/6.png"
+            }
+        case "bug":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/7.png"
+            }
+        case "ghost":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/8.png"
+            }
+        case "steel":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/9.png"
+            }
+        case "fire":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/10.png"
+            }
+        case "water":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/11.png"
+            }
+        case "grass":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/12.png"
+            }
+        case "electric":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/13.png"
+            }
+        case "psychic":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/14.png"
+            }
+        case "ice":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/15.png"
+            }
+        case "dragon":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/16.png"
+            }
+        case "dark":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/17.png"
+            }
+        case "fairy":
+            {
+                return "sprites-master/sprites/types/generation-viii/sword-shield/18.png"
+            }
+
+
+    }
+}
 
 
 
-
+//PASSER PAR LES POKEDEX REGIONAUX POUR LES REGIONS
 
 // let jsp = document.querySelector("main")
 // create_vignette("main", 1)
