@@ -7,6 +7,14 @@
 //     }
 // });
 
+let search_place = document.querySelector(`.search`)
+search_place.addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêcher le comportement par défaut de soumission
+    let formData = new FormData(search_place);
+    let data_search = formData.get('search');
+    location.href = `html/pokemon.html?id=${data_search}`
+
+})
 
 let form_type = document.querySelector('.submit_type');
 form_type.addEventListener('submit', async function(event) {
@@ -36,9 +44,8 @@ form_reg.addEventListener('submit', async function(event) {
     let data = await call_poke_reg(data_region)
     let n = 1
     empty_elem(".content")
-    for(const elem of data.pokemon_entries){
+    for (const elem of data) {
         create_vignette(".content", n);
-        console.log(n);
         let link = elem.pokemon_species.url
         let id = link.slice(42)
         id = id.slice(0, -1);

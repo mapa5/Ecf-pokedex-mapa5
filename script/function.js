@@ -55,35 +55,43 @@ const call_poke_reg = async function CPR(id) {
         const response = await fetch(`https://pokeapi.co/api/v2/region/${id}`);
         const data = await response.json();
         if (id == 1 || id == 9) {
+
             let pkdx = data.pokedexes[0].url
             let id_url = pkdx.slice(33)
-            let pkdx_data = get_pokedex(id_url)
-            return pkdx_data
+            let pkdx_data = await get_pokedex(id_url)
+            return pkdx_data.pokemon_entries
+
         } else if (id == 2 || id == 3 || id == 4 || id == 5) {
+
             let pkdx = data.pokedexes[1].url
             let id_url = pkdx.slice(33)
-            let pkdx_data = get_pokedex(id_url)
-            return pkdx_data
-            // } else if (id == 6) {
-            //     let pkdx = data.pokedexes[]
-            // } else if (id == 7) {
-            //     let pkdx = data.pokedexes[]
-            // } else if (id == 8) {
-            //     let pkdx = data.pokedexes[]
-            // } else if (id == 10) {
-            //     let pkdx = data.pokedexes[]
-            // } else if (id == 11) {
-            //     let pkdx = data.pokedexes[]
-            // }
+            let pkdx_data = await get_pokedex(id_url)
+            return pkdx_data.pokemon_entries
         }
-    }
-
-    // 1er : 1 9
-
-    // 2eme : 2 3 4 5
-
-    // autre :6 7 8 10
-    catch (err) {
+        //     else if (id == 6) {
+        //     let pkdx = data.pokedexes[0].url
+        //     let pkdx1 = data.pokedexes[1].url
+        //     let pkdx2 = data.pokedexes[2].url
+        //     let id_url = pkdx.slice(33)
+        //     let id_url1 = pkdx1.slice(33)
+        //     let id_url2 = pkdx2.slice(33)
+        //     let pkdx_data = await get_pokedex(id_url)
+        //     let pkdx_data1 = await get_pokedex(id_url1)
+        //     let pkdx_data2 = await get_pokedex(id_url2)
+        //     let result = Object.assign(pkdx_data.pokemon_entries, pkdx_data1.pokemon_entries, pkdx_data2.pokemon_entries)
+        //     console.log(pkdx_data);console.log(pkdx_data1);console.log(pkdx_data2);
+        //     console.log(result);
+        //     return result
+        // } else if (id == 7) {
+        //     let pkdx = data.pokedexes[]
+        // } else if (id == 8) {
+        //     let pkdx = data.pokedexes[]
+        // } else if (id == 10) {
+        //     let pkdx = data.pokedexes[]
+        // } else if (id == 11) {
+        //     let pkdx = data.pokedexes[]
+        // }
+    } catch (err) {
         console.error(err);
     }
 };
@@ -142,6 +150,7 @@ const fill_vignette = function FV(data1, data2, id) {
     console.log(data1);
     console.log(data2);
     console.log(id);
+    let emp = document.querySelector(`.vignette_${id}`)
     let emp_pic = document.querySelector(`.vignette_image_${id}`)
     let emp_name = document.querySelector(`.vignette_nom_${id}`)
     let emp_id = document.querySelector(`.vignette_id_${id}`)
@@ -171,6 +180,10 @@ const fill_vignette = function FV(data1, data2, id) {
     } catch (err) {
         console.error(err);
     }
+    emp.addEventListener("click", function() {
+        location.href = `html/pokemon.html?id=${id}`
+    })
+
 }
 
 const empty_elem = async function EE(selector) {
