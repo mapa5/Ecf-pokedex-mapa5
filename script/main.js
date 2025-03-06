@@ -1,21 +1,29 @@
-window.addEventListener("load", async () => {
-    for (let n = 1; n <= 151; n++) {
-        create_vignette(".content", n);
-        let data1 = await call_poke_gen(n);
-        let data2 = await get_poke_info(n);
-        fill_vignette(data1, data2, n);
-    }
-});
+// window.addEventListener("load", async () => {
+//     for (let n = 1; n <= 151; n++) {
+//         create_vignette(".content", n);
+//         let data1 = await call_poke_gen(n);
+//         let data2 = await get_poke_info(n);
+//         fill_vignette(data1, data2, n);
+//     }
+// });
 
 
 let form_type = document.querySelector('.submit_type');
-form_type.addEventListener('submit', function(event) {
+form_type.addEventListener('submit', async function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
 
     let formData = new FormData(form_type);
     let data_type = formData.get('type');
-    console.log(data_type);
-    call_poke_type(data_type)
+    empty_elem(".content")
+    let data = await call_poke_type(data_type)
+    for (let n = 0; n <= data.pokemon.length - 1; n++) {
+        create_vignette(".content", n);
+        let link = data.pokemon[n].pokemon.url
+        let id = link.slice(34)
+        let data1 = await call_poke_gen(id);
+        let data2 = await get_poke_info(id);
+        fill_vignette(data1, data2, n);
+    }
 });
 
 
@@ -25,7 +33,8 @@ form_reg.addEventListener('submit', function(event) {
 
     let formData = new FormData(form_reg);
     let data_region = formData.get('region');
-    console.log(data_region);
+    let pkm = console.log(data_region);
+    console.log(pkm);
 
 });
 
