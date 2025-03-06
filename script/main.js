@@ -28,14 +28,29 @@ form_type.addEventListener('submit', async function(event) {
 
 
 let form_reg = document.querySelector('.submit_reg');
-form_reg.addEventListener('submit', function(event) {
+form_reg.addEventListener('submit', async function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
 
     let formData = new FormData(form_reg);
     let data_region = formData.get('region');
-    let pkm = console.log(data_region);
-
-
+    let data = await call_poke_reg(data_region)
+    let n = 1
+    empty_elem(".content")
+    data.pokemon_entries.forEach(async(elem) => {
+        create_vignette(".content", n);
+        console.log(n);
+        n = ++n
+        let link = elem.pokemon_species.url
+        let id = link.slice(42)
+        id = id.slice(0, -1);
+        console.log(id);
+        let data1 = await call_poke_gen(id);
+        let data2 = await get_poke_info(id);
+        console.log(n);
+        console.log(data1);
+        console.log(data2);
+        fill_vignette(data1, data2, n);
+    });
 });
 
 let form_gen = document.querySelector('.submit_gen');

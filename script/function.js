@@ -50,9 +50,55 @@ const get_poke_info = async function GPI(id) {
     }
 }
 
-// const requete_pokemon_vig = async function RPV() {
+const call_poke_reg = async function CPR(id) {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/region/${id}`);
+        const data = await response.json();
+        if (id == 1 || id == 9) {
+            let pkdx = data.pokedexes[0].url
+            let id_url = pkdx.slice(33)
+            let pkdx_data = get_pokedex(id_url)
+            return pkdx_data
+        } else if (id == 2 || id == 3 || id == 4 || id == 5) {
+            let pkdx = data.pokedexes[1].url
+            let id_url = pkdx.slice(33)
+            let pkdx_data = get_pokedex(id_url)
+            return pkdx_data
+            // } else if (id == 6) {
+            //     let pkdx = data.pokedexes[]
+            // } else if (id == 7) {
+            //     let pkdx = data.pokedexes[]
+            // } else if (id == 8) {
+            //     let pkdx = data.pokedexes[]
+            // } else if (id == 10) {
+            //     let pkdx = data.pokedexes[]
+            // } else if (id == 11) {
+            //     let pkdx = data.pokedexes[]
+            // }
+        }
+    }
 
-// }
+    // 1er : 1 9
+
+    // 2eme : 2 3 4 5
+
+    // autre :6 7 8 10
+    catch (err) {
+        console.error(err);
+    }
+};
+
+const get_pokedex = async function GP(id) {
+    console.log(id);
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokedex/${id}`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 const create_vignette = async function CV(emplacement, id) {
 
