@@ -36,10 +36,9 @@ form_reg.addEventListener('submit', async function(event) {
     let data = await call_poke_reg(data_region)
     let n = 1
     empty_elem(".content")
-    data.pokemon_entries.forEach(async(elem) => {
+    for(const elem of data.pokemon_entries){
         create_vignette(".content", n);
         console.log(n);
-        n = ++n
         let link = elem.pokemon_species.url
         let id = link.slice(42)
         id = id.slice(0, -1);
@@ -50,7 +49,8 @@ form_reg.addEventListener('submit', async function(event) {
         console.log(data1);
         console.log(data2);
         fill_vignette(data1, data2, n);
-    });
+        n = ++n
+    };
 });
 
 let form_gen = document.querySelector('.submit_gen');

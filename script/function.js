@@ -147,7 +147,12 @@ const fill_vignette = function FV(data1, data2, id) {
     let emp_id = document.querySelector(`.vignette_id_${id}`)
     let emp_type_pic = document.querySelector(`.vignette_type_img1_${id}`)
     let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`);
-    emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
+    console.log(data2.id);
+    try {
+        emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
+    } catch (err) {
+        console.error(err);
+    }
     try {
         emp_name.innerHTML = data1.names[4].name
     } catch (err) {
