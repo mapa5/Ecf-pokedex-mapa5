@@ -181,9 +181,48 @@ const fill_vignette = function FV(data1, data2, id) {
         console.error(err);
     }
     emp.addEventListener("click", function() {
-        location.href = `html/pokemon.html?id=${id}`
+        location.href = `pokemon.html?id=${id}`
     })
 
+}
+
+const fill_pokemon_info = function FPI(data1, data2, id) {
+    console.log(data1);
+    console.log(data2);
+    console.log(id);
+    let emp = document.querySelector(`.pokemon`)
+    let emp_pic = document.querySelector(`.pkm_img`)
+    let emp_name = document.querySelector(`.pkm_name`)
+    let emp_id = document.querySelector(`.pkm_id`)
+    let emp_desc = document.querySelector(`.pkm_desc`)
+    let emp_stats = document.querySelector(`.pkm_stats`);
+    let emp_type_pic = document.querySelector(`.pkm_type1`)
+    let emp_type_pic2 = document.querySelector(`.pkm_type2`);
+    try {
+        emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
+    } catch (err) {
+        console.error(err);
+    }
+    try {
+        emp_name.innerHTML = data1.names[4].name
+    } catch (err) {
+        console.error(err);
+        try {
+            emp_name.innerHTML = data2.name
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    emp_id.innerHTML = `Id : ${data2.id}`
+    emp_type_pic.src = type_selector(data2.types[0].type.name)
+    try {
+        emp_type_pic2.src = type_selector(data2.types[1].type.name)
+    } catch (err) {
+        console.error(err);
+    }
+    emp.addEventListener("click", function() {
+        location.href = `pokemon.html?id=${id}`
+    })
 }
 
 const empty_elem = async function EE(selector) {

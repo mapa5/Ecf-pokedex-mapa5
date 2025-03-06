@@ -105,3 +105,56 @@ main {
 .vignette_type img {
     max-width: 110px;
 }
+
+.pokemon {
+    display: grid;
+    grid-template-areas:
+        "pkm_img pkm_img pkm_img pkm_evo1 pkm_evo2 pkm_evo3"
+        "pkm_img pkm_img pkm_img pkm_name pkm_name pkm_type1"
+        "pkm_img pkm_img pkm_img pkm_id . pkm_type2"
+        ". pkm_img_set . pkm_desc pkm_desc pkm_desc"
+        "pkm_stats pkm_stats pkm_stats pkm_desc pkm_desc pkm_desc";
+        gap: 25px;
+}
+
+.pkm_img {
+    grid-area: pkm_img;
+    height: 35em;
+    width: 35em;
+}
+
+.evo1 {
+    grid-area: pkm_evo1
+}
+
+.evo2 {
+    grid-area: pkm_evo2
+}
+
+.evo3 {
+    grid-area: pkm_evo3
+}
+
+.pkm_name {
+    grid-area: pkm_name
+}
+
+.pkm_id {
+    grid-area: pkm_id
+}
+
+.pkm_type1 {
+    grid-area: pkm_type1
+}
+
+.pkm_type2 {
+    grid-area: pkm_type2
+}
+
+.pkm_desc {
+    grid-area: pkm_desc
+}
+
+.pkm_stats {
+    grid-area: pkm_stats
+}

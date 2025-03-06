@@ -12,7 +12,7 @@ search_place.addEventListener('submit', function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
     let formData = new FormData(search_place);
     let data_search = formData.get('search');
-    location.href = `html/pokemon.html?id=${data_search}`
+    location.href = `pokemon.html?id=${data_search}`
 
 })
 
