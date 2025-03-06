@@ -1,11 +1,11 @@
-// window.addEventListener("load", async () => {
-//     for (let n = 1; n <= 151; n++) {
-//         create_vignette(".content", n);
-//         let data1 = await call_poke_gen(n);
-//         let data2 = await get_poke_info(n);
-//         fill_vignette(data1, data2, n);
-//     }
-// });
+window.addEventListener("load", async () => {
+    for (let n = 1; n <= 151; n++) {
+        create_vignette(".content", n);
+        let data1 = await call_poke_gen(n);
+        let data2 = await get_poke_info(n);
+        fill_vignette(data1, data2, n);
+    }
+});
 
 let search_place = document.querySelector(`.search`)
 search_place.addEventListener('submit', function(event) {

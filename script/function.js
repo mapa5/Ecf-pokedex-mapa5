@@ -22,10 +22,6 @@ const call_poke_gen = async function CPG(i) {
     }
 }
 
-// const call_poke_single = async function CPS(id) {
-
-// }
-
 const call_poke_type = async function CPT(i) {
 
     console.log(i);
@@ -144,8 +140,6 @@ const create_vignette = async function CV(emplacement, id) {
     sel_type_vig.appendChild(type_vig_img2)
 }
 
-//FAIRE DES INNER HTML AU LIEU DES APPENDCHHILD
-
 const fill_vignette = function FV(data1, data2, id) {
     console.log(data1);
     console.log(data2);
@@ -186,40 +180,91 @@ const fill_vignette = function FV(data1, data2, id) {
 
 }
 
-const fill_pokemon_info = function FPI(data1, data2, id) {
+const fill_pokemon_info = async function FPI(data1, data2, id) {
     console.log(data1);
     console.log(data2);
     console.log(id);
     let emp = document.querySelector(`.pokemon`)
     let emp_pic = document.querySelector(`.pkm_img`)
+    let emp_evo1 = document.querySelector(`.evo1`)
+    let emp_evo2 = document.querySelector(`.evo2`)
+    let emp_evo3 = document.querySelector(`.evo3`)
+    let emp_evo1_img = document.querySelector(`.evo1 img`)
+    let emp_evo2_img = document.querySelector(`.evo2 img`)
+    let emp_evo3_img = document.querySelector(`.evo3 img`)
+    let emp_evo1_span = document.querySelector(`.evo1 span`)
+    let emp_evo2_span = document.querySelector(`.evo2 span`)
+    let emp_evo3_span = document.querySelector(`.evo3 span`)
     let emp_name = document.querySelector(`.pkm_name`)
     let emp_id = document.querySelector(`.pkm_id`)
+    let emp_type1 = document.querySelector(`.pkm_type1`)
+    let emp_type2 = document.querySelector(`.pkm_type2`);
     let emp_desc = document.querySelector(`.pkm_desc`)
     let emp_stats = document.querySelector(`.pkm_stats`);
-    let emp_type_pic = document.querySelector(`.pkm_type1`)
-    let emp_type_pic2 = document.querySelector(`.pkm_type2`);
+
+
     try {
         emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
+        // emp_evo2_img.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
     } catch (err) {
         console.error(err);
     }
+    // try {
+    //     emp_evo1_img.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id-1}.png`
+    //     emp_evo1_span.innerHTML = data1.evolves_from_species.name
+    // } catch (err) {
+    //     console.error(err)
+    // }
+    // try {
+    //     emp_evo3_img.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id+1}.png`
+    //     emp_evo3_span.innerHTML = data1.evolves_from_species.name
+    // } catch (err) {
+    //     console.error(err)
+    // }
+    // try {
+    //     const response = await fetch(`https://pokeapi.co/api/v2/evolution-chain/1`);
+    //     const data = await response.json();
+    //     console.log(data);
+    //     console.log('ICI');
+    // } catch (err) {
+    //     console.error(err);
+    // }
+    //  try {
+    //     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`);
+    //     const data = await response.json();
+    //     console.log(data);
+    //     console.log('ICI');
+    // } catch (err) {
+    //     console.error(err);
+    // }
     try {
         emp_name.innerHTML = data1.names[4].name
+        // emp_evo2_span.innerHTML = data1.names[4].name
     } catch (err) {
         console.error(err);
         try {
             emp_name.innerHTML = data2.name
+            // emp_evo2_span.innerHTML = data2.name
         } catch (err) {
             console.error(err);
         }
     }
     emp_id.innerHTML = `Id : ${data2.id}`
-    emp_type_pic.src = type_selector(data2.types[0].type.name)
+    emp_type1.src = type_selector(data2.types[0].type.name)
     try {
-        emp_type_pic2.src = type_selector(data2.types[1].type.name)
+        emp_type2.src = type_selector(data2.types[1].type.name)
     } catch (err) {
         console.error(err);
     }
+    for (let elem of data1.flavor_text_entries) {
+        if (elem.language.name == "fr") {
+            emp_desc.innerHTML = elem.flavor_text;
+            break;
+        }
+    }
+
+
+    data2.stats
     emp.addEventListener("click", function() {
         location.href = `pokemon.html?id=${id}`
     })

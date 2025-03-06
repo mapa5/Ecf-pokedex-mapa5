@@ -114,7 +114,10 @@ main {
         "pkm_img pkm_img pkm_img pkm_id . pkm_type2"
         ". pkm_img_set . pkm_desc pkm_desc pkm_desc"
         "pkm_stats pkm_stats pkm_stats pkm_desc pkm_desc pkm_desc";
-        gap: 25px;
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .pkm_img {
