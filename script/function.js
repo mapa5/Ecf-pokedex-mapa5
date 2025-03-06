@@ -1,15 +1,3 @@
-// var recup_data = async function recup_data(i) {
-//     console.log(i);
-//     try {
-//         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${i}`);
-//         const data = await response.json();
-//         console.log(data);
-//         return data;
-//     } catch (err) {
-//         console.error(err);
-//     }
-// };
-
 //liste generation
 
 //gen 1 : 1-151

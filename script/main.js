@@ -34,7 +34,7 @@ form_reg.addEventListener('submit', function(event) {
     let formData = new FormData(form_reg);
     let data_region = formData.get('region');
     let pkm = console.log(data_region);
-    console.log(pkm);
+
 
 });
 
@@ -128,5 +128,4 @@ form_gen.addEventListener('submit', async function(event) {
         }
         return nbr;
     }
-
 });
