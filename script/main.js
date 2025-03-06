@@ -7,13 +7,17 @@ window.addEventListener("load", async () => {
     }
 });
 
+let logo = document.querySelector(`.img_logo`)
+logo.addEventListener("click", function() {
+    location.href = `index.html`
+})
+
 let search_place = document.querySelector(`.search`)
 search_place.addEventListener('submit', function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
     let formData = new FormData(search_place);
     let data_search = formData.get('search');
     location.href = `pokemon.html?id=${data_search}`
-
 })
 
 let form_type = document.querySelector('.submit_type');
@@ -49,12 +53,8 @@ form_reg.addEventListener('submit', async function(event) {
         let link = elem.pokemon_species.url
         let id = link.slice(42)
         id = id.slice(0, -1);
-        console.log(id);
         let data1 = await call_poke_gen(id);
         let data2 = await get_poke_info(id);
-        console.log(n);
-        console.log(data1);
-        console.log(data2);
         fill_vignette(data1, data2, n);
         n = ++n
     };

@@ -8,3 +8,8 @@ if (id != null) {
         fill_pokemon_info(data1, data2, id);
     })(id);
 }
+
+let logo = document.querySelector(`.img_logo`)
+logo.addEventListener("click", function() {
+    location.href = `index.html`
+})

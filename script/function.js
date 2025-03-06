@@ -10,12 +10,12 @@
 //gen 8 : 810-905
 //gen 9 : 906-1025
 
+
 const call_poke_gen = async function CPG(i) {
 
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (err) {
         console.error(err);
@@ -35,11 +35,9 @@ const call_poke_type = async function CPT(i) {
 }
 
 const get_poke_info = async function GPI(id) {
-    console.log(id);
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (err) {
         console.error(err);
@@ -93,11 +91,9 @@ const call_poke_reg = async function CPR(id) {
 };
 
 const get_pokedex = async function GP(id) {
-    console.log(id);
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokedex/${id}`);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (err) {
         console.error(err);
@@ -105,18 +101,14 @@ const get_pokedex = async function GP(id) {
 }
 
 const create_vignette = async function CV(emplacement, id) {
-
     let emp = document.querySelector(`${emplacement}`)
-
     let vig = document.createElement("div")
     let vig_img = document.createElement("img")
     let vig_name = document.createElement("h2")
     let vig_id = document.createElement("span")
-
     let vig_type = document.createElement("div")
     let type_vig_img = document.createElement("img")
     let type_vig_img2 = document.createElement("img")
-
     vig.className = `vignette vignette_${id}`
     vig_img.className = `vignette_image vignette_image_${id}`
     vig_name.className = `vignette_nom vignette_nom_${id}`
@@ -124,33 +116,24 @@ const create_vignette = async function CV(emplacement, id) {
     vig_type.className = `vignette_type vignette_type_${id}`
     type_vig_img.className = `vignette_type_img1 vignette_type_img1_${id}`
     type_vig_img2.className = `vignette_type_img2 vignette_type_img2_${id}`
-
     emp.appendChild(vig)
-
     let sel_vig = document.querySelector(`.vignette_${id}`)
-
     sel_vig.appendChild(vig_img)
     sel_vig.appendChild(vig_name)
     sel_vig.appendChild(vig_id)
     sel_vig.appendChild(vig_type)
-
     let sel_type_vig = document.querySelector(`.vignette_type_${id}`)
-
     sel_type_vig.appendChild(type_vig_img)
     sel_type_vig.appendChild(type_vig_img2)
 }
 
 const fill_vignette = function FV(data1, data2, id) {
-    console.log(data1);
-    console.log(data2);
-    console.log(id);
     let emp = document.querySelector(`.vignette_${id}`)
     let emp_pic = document.querySelector(`.vignette_image_${id}`)
     let emp_name = document.querySelector(`.vignette_nom_${id}`)
     let emp_id = document.querySelector(`.vignette_id_${id}`)
     let emp_type_pic = document.querySelector(`.vignette_type_img1_${id}`)
     let emp_type_pic2 = document.querySelector(`.vignette_type_img2_${id}`);
-    console.log(data2.id);
     try {
         emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
     } catch (err) {
@@ -166,7 +149,6 @@ const fill_vignette = function FV(data1, data2, id) {
             console.error(err);
         }
     }
-
     emp_id.innerHTML = `Id : ${data2.id}`
     emp_type_pic.src = type_selector(data2.types[0].type.name)
     try {
@@ -177,13 +159,9 @@ const fill_vignette = function FV(data1, data2, id) {
     emp.addEventListener("click", function() {
         location.href = `pokemon.html?id=${id}`
     })
-
 }
 
 const fill_pokemon_info = async function FPI(data1, data2, id) {
-    console.log(data1);
-    console.log(data2);
-    console.log(id);
     let emp = document.querySelector(`.pokemon`)
     let emp_pic = document.querySelector(`.pkm_img`)
     let emp_evo1 = document.querySelector(`.evo1`)
@@ -201,6 +179,7 @@ const fill_pokemon_info = async function FPI(data1, data2, id) {
     let emp_type2 = document.querySelector(`.pkm_type2`);
     let emp_desc = document.querySelector(`.pkm_desc`)
     let emp_stats = document.querySelector(`.pkm_stats`);
+    let emp_pic_but = document.querySelector(`.pkm_img_set`)
 
 
     try {
@@ -263,11 +242,33 @@ const fill_pokemon_info = async function FPI(data1, data2, id) {
         }
     }
 
+    emp_stats.innerHTML = `
+        HP : ${data2.stats[0].base_stat} <br>
+        Attaque : ${data2.stats[1].base_stat} <br>
+        Defence : ${data2.stats[2].base_stat} <br>
+        Attaque Speciale : ${data2.stats[3].base_stat} <br>
+        Defence Speciale : ${data2.stats[4].base_stat} <br>
+        Vitesse : ${data2.stats[5].base_stat}`
 
-    data2.stats
-    emp.addEventListener("click", function() {
-        location.href = `pokemon.html?id=${id}`
+    emp_pic_but.addEventListener("click", function() {
+        if (emp_pic.src == `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`) {
+            try {
+                emp_pic.src = `sprites-master/sprites/pokemon/other/dream-world/${data2.id}.svg`
+            } catch (err) {
+                console.error(err);
+            }
+        } else {
+            try {
+                emp_pic.src = `sprites-master/sprites/pokemon/other/official-artwork/${data2.id}.png`
+            } catch (err) {
+                console.error(err);
+            }
+        }
     })
+
+    // emp.addEventListener("click", function() {
+    //     location.href = `pokemon.html?id=${id}`
+    // })
 }
 
 const empty_elem = async function EE(selector) {
@@ -349,7 +350,5 @@ const type_selector = function TS(name) {
             {
                 return "sprites-master/sprites/types/generation-viii/sword-shield/18.png"
             }
-
-
     }
 }

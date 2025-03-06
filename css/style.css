@@ -161,3 +161,18 @@ main {
 .pkm_stats {
     grid-area: pkm_stats
 }
+
+.pkm_img_set {
+    grid-area: pkm_img_set;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--vert);
+    position: sticky;
+    color: white;
+}
