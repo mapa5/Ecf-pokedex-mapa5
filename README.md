@@ -17,3 +17,5 @@ fonctionnalité manquante avec potentiellement des bribes commenté dans le code
 - le responsive
 - le changement d'image dans la fiche pokemon
 
+notes : 
+- le font n'es pas disponible dans figma parce qu'il a été "récupéré" du site pokémon lui même 
