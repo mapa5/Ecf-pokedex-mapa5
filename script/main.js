@@ -13,7 +13,7 @@ logo.addEventListener("click", function() {
 })
 
 let search_place = document.querySelector(`.search`)
-search_place.addEventListener('submit', function(event) {
+search_place.addEventListener('change', function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
     let formData = new FormData(search_place);
     let data_search = formData.get('search');
@@ -21,7 +21,7 @@ search_place.addEventListener('submit', function(event) {
 })
 
 let form_type = document.querySelector('.submit_type');
-form_type.addEventListener('submit', async function(event) {
+form_type.addEventListener('change', async function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
 
     let formData = new FormData(form_type);
@@ -41,7 +41,7 @@ form_type.addEventListener('submit', async function(event) {
 
 
 let form_reg = document.querySelector('.submit_reg');
-form_reg.addEventListener('submit', async function(event) {
+form_reg.addEventListener('change', async function(event) {
     event.preventDefault(); // Empêcher le comportement par défaut de soumission
 
     let formData = new FormData(form_reg);

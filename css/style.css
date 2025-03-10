@@ -8,6 +8,8 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: var(--vert-clair);
+    font-family: Flexo-Medium, arial, sans-serif;
 }
 
 img,
@@ -18,13 +20,13 @@ canvas {
     height: auto;
 }
 
-
 .container {
     width: 1440px;
     margin: 0 auto;
 }
 
-header {
+header,
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,19 +39,13 @@ header img {
     max-width: 230px;
 }
 
-body {
-    background-color: var(--vert-clair);
-    font-family: Flexo-Medium, arial, sans-serif;
+footer {
+    color: white;
 }
 
 main {
     display: flex;
     flex-direction: column;
-}
-
-.selecteur form {
-    display: flex;
-    gap: 15px;
 }
 
 .selecteur {
@@ -60,11 +56,16 @@ main {
     gap: 30px;
 }
 
+.selecteur form {
+    display: flex;
+    gap: 15px;
+}
+
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 45px;
-    padding: 60px 0px;
+    padding: 60px 0;
 }
 
 .vignette {
@@ -87,8 +88,6 @@ main {
     max-width: 135px;
     max-height: 135px;
     margin: 5px 10px;
-
-
 }
 
 .vignette_nom {
@@ -130,52 +129,41 @@ main {
 }
 
 .evo1 {
-    grid-area: pkm_evo1
+    grid-area: pkm_evo1;
 }
 
 .evo2 {
-    grid-area: pkm_evo2
+    grid-area: pkm_evo2;
 }
 
 .evo3 {
-    grid-area: pkm_evo3
+    grid-area: pkm_evo3;
 }
 
 .pkm_name {
-    grid-area: pkm_name
+    grid-area: pkm_name;
 }
 
 .pkm_id {
-    grid-area: pkm_id
+    grid-area: pkm_id;
 }
 
 .pkm_type1 {
-    grid-area: pkm_type1
+    grid-area: pkm_type1;
 }
 
 .pkm_type2 {
-    grid-area: pkm_type2
+    grid-area: pkm_type2;
 }
 
 .pkm_desc {
-    grid-area: pkm_desc
+    grid-area: pkm_desc;
 }
 
 .pkm_stats {
-    grid-area: pkm_stats
+    grid-area: pkm_stats;
 }
 
 .pkm_img_set {
     grid-area: pkm_img_set;
-}
-
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: var(--vert);
-    position: sticky;
-    color: white;
 }
