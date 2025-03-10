@@ -29,12 +29,13 @@ form_type.addEventListener('submit', async function(event) {
     empty_elem(".content")
     let data = await call_poke_type(data_type)
     for (let n = 0; n <= data.pokemon.length - 1; n++) {
-        create_vignette(".content", n);
         let link = data.pokemon[n].pokemon.url
         let id = link.slice(34)
+        id = id.slice(0, -1);
+        create_vignette(".content", id);
         let data1 = await call_poke_gen(id);
         let data2 = await get_poke_info(id);
-        fill_vignette(data1, data2, n);
+        fill_vignette(data1, data2, id);
     }
 });
 
