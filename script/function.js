@@ -1,16 +1,3 @@
-//liste generation
-
-//gen 1 : 1-151
-//gen 2 : 152-251
-//gen 3 : 252-386
-//gen 4 : 387-493
-//gen 5 : 494-649
-//gen 6 : 650-721
-//gen 7 : 722-809
-//gen 8 : 810-905
-//gen 9 : 906-1025
-
-
 const call_poke_gen = async function CPG(i) {
 
     try {
