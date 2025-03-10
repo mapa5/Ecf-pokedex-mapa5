@@ -62,7 +62,8 @@ main {
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 25px;
+    gap: 45px;
+    padding: 60px 0px;
 }
 
 .vignette {
@@ -77,6 +78,7 @@ main {
     align-content: center;
     align-items: center;
     justify-items: center;
+    background-color: var(--creme);
 }
 
 .vignette_image {

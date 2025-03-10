@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokedex</title>
-    <link rel="stylesheet" type="text/css" href="css\import.css">
-    <link rel="stylesheet" type="text/css" href="css\var.css">
-    <link rel="stylesheet" href="css\style.css">
-    <script type="text/javascript" src="script\function.js" defer></script>
-    <script type="text/javascript" src="script\main.js" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="css/import.css">
+    <link rel="stylesheet" type="text/css" href="css/var.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/function.js" defer></script>
+    <script src="script/main.js" defer=""></script>
 </head>
 
 <body>
     <header>
-        <img src="img\pokedexlogo.png" class="img_logo">
+        <img src="img/pokedexlogo.png" class="img_logo" alt="Logo">
         <form class="search">
             <input type="text" name="search" placeholder="Recherchez le pokemon de votre choix par son nom ou son id" autocomplete="off">
             <input type="submit" name="search">
@@ -25,7 +25,7 @@
         <div class="selecteur">
             <form class="submit_type">
                 <label for="type">Triez selon un type particulier</label>
-                <select name="type" class="type">
+                <select name="type" class="type" id="type">
                     <option value="9">Acier</option>
                     <option value="2">Combat</option>
                     <option value="16">Dragon</option>
@@ -45,11 +45,11 @@
                     <option value="17">Tenebres</option>
                     <option value="3">Vol</option>
                 </select>
-                <input type="submit" name="">
+                <input type="submit" name="Choix de type">
             </form>
             <form class="submit_reg">
                 <label for="region">Triez selon la region voulue</label>
-                <select name="region" class="region">
+                <select name="region" class="region" id="region">
                     <option value="1">Kanto</option>
                     <option value="2">Johto</option>
                     <option value="3">Hoenn</option>
@@ -62,11 +62,11 @@
                     <option value="10">Paldea</option>
                     <option value="11">Kitakami</option>
                 </select>
-                <input type="submit" name="">
+                <input type="submit" name="Choix de region">
             </form>
             <form class="submit_gen">
                 <label for="generation">Selectionnez la generation que vous voulez</label>
-                <select name="generation" class="generation">
+                <select name="generation" class="generation" id="generation">
                     <option value="1">Ⅰ</option>
                     <option value="2">Ⅱ</option>
                     <option value="3">Ⅲ</option>
@@ -77,7 +77,7 @@
                     <option value="8">Ⅷ</option>
                     <option value="9">Ⅸ</option>
                 </select>
-                <input type="submit" name="">
+                <input type="submit" name="Choix de generation">
             </form>
         </div>
         <div class="content container">
