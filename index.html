@@ -9,21 +9,21 @@
     <link rel="stylesheet" type="text/css" href="css/var.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="script/function.js" defer></script>
-    <script src="script/main.js" defer=""></script>
+    <script src="script/main.js" defer></script>
 </head>
 
 <body>
     <header>
-        <img src="img/pokedexlogo2.png" class="img_logo" alt="Logo">
-        <form class="search">
+        <img src="img/pokedexlogo2.png" class="img_logo" alt="Logo Pokedex">
+        <form class="search" aria-label="Rechercher un Pokémon">
             <input type="text" name="search" placeholder="Recherchez le pokemon de votre choix par son nom ou son id" autocomplete="off">
-            <input type="submit" name="search">
+            <input type="submit" value="Rechercher">
         </form>
-        <a href="" title="">Creez votre team ici</a>
+        <a href="#" title="Créer votre équipe">Créer votre équipe ici</a>
     </header>
     <main class="container">
         <div class="selecteur">
-            <form class="submit_type">
+            <form class="submit_type" aria-label="Filtrer par type">
                 <select name="type" class="type" id="type">
                     <option value="" disabled selected hidden>Type</option>
                     <option value="9">Acier</option>
@@ -46,7 +46,7 @@
                     <option value="3">Vol</option>
                 </select>
             </form>
-            <form class="submit_reg">
+            <form class="submit_reg" aria-label="Filtrer par région">
                 <select name="region" class="region" id="region">
                     <option value="" disabled selected hidden>Région</option>
                     <option value="1">Kanto</option>
@@ -62,7 +62,7 @@
                     <option value="11">Kitakami</option>
                 </select>
             </form>
-            <form class="submit_gen">
+            <form class="submit_gen" aria-label="Filtrer par génération">
                 <select name="generation" class="generation" id="generation">
                     <option value="" disabled selected hidden>Génération</option>
                     <option value="1">Ⅰ</option>
@@ -78,10 +78,11 @@
             </form>
         </div>
         <div class="content container">
+            <!-- Contenu généré par JavaScript -->
         </div>
     </main>
     <footer>
-        <span>Projet Scolaire par Bastien Pihouet utilisant la poke API</span>
+        <span>Projet Scolaire par Bastien Pihouet utilisant la Poke API</span>
     </footer>
 </body>
 
